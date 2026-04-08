@@ -1,7 +1,7 @@
 {
-   "name": "@itsliaaa/baileys",
-   "version": "0.1.16",
-   "description": "A simple fork of Baileys for WhatsApp automation",
+   "name": "@crysnovax/baileys",
+   "version": "1.0.0",
+   "description": "A lightweight Baileys fork for WhatsApp automation",
    "main": "lib/index.js",
    "type": "module",
    "scripts": {
@@ -12,7 +12,7 @@
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/itsliaaa/baileys.git"
+      "url": "git+https://github.com/crysnovax/crysnovax.git"
    },
    "files": [
       "lib/**/*",
@@ -33,8 +33,8 @@
       "whatsapp-group",
       "whatsapp-web"
    ],
-   "homepage": "https://github.com/itsliaaa/baileys#readme",
-   "author": "Lia Wynn",
+   "homepage": "https://github.com/crysnovax/crysnovax#readme",
+   "author": "crysnovax",
    "license": "MIT",
    "dependencies": {
       "@adiwajshing/keyed-db": "^0.2.4",
