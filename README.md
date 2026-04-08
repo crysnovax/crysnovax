@@ -108,13 +108,3 @@ For full API documentation, please refer to the original Baileys repository.
 
 MIT
 
-```
-
----
-
-### 📌 Summary of Changes Made
-| Original | New |
-|----------|-----|
-| `@itsliaaa/baileys` | `@crysnovax/baileys` |
-| `github:itsliaaa/baileys` | `github:crysnovax/crysnovax` |
-| `itsliaaa/baileys#readme` (homepage in package.json) | `crysnovax/crysnovax#readme` |
