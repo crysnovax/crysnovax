@@ -1,5 +1,5 @@
 {
-   "name": "@crysnovax/baileys",
+   "name": "@crysnovax/baileys-stable",
    "version": "1.0.0",
    "description": "Enhanced Baileys v7 with fixed newsletter media upload, plus support for interactive messages, albums, and more message types.",
    "main": "lib/index.js",
