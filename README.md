@@ -1,4 +1,3 @@
-## CRYSN⚇VAX
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=40&duration=3000&pause=800&color=10B981&center=true&vCenter=true&width=600&lines=%F0%9F%91%8B+Hey%2C+I'm+CRYSNOVA;%F0%9F%92%BB+Full+Stack+Developer;%F0%9F%9A%80+Building+the+Future;%F0%9F%94%A5+Open+Source+Lover" alt="Typing Animation" />
 </p>
@@ -44,12 +43,14 @@ const crysnova = {
 </h2>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black&color=10b981&labelColor=0a0f0a" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white&color=10b981&labelColor=0a0f0a" />
-  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white&color=10b981&labelColor=0a0f0a" />
-  <img src="https://img.shields.io/badge/Workers-F38020?style=for-the-badge&logo=cloudflareworkers&logoColor=white&color=10b981&labelColor=0a0f0a" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&color=10b981&labelColor=0a0f0a" />
-  <img src="https://img.shields.io/badge/Baileys-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&color=10b981&labelColor=0a0f0a" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black&labelColor=0a0f0a&color=10b981" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white&labelColor=0a0f0a&color=10b981" />
+  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white&labelColor=0a0f0a&color=10b981" />
+  <img src="https://img.shields.io/badge/Workers-F38020?style=for-the-badge&logo=cloudflareworkers&logoColor=white&labelColor=0a0f0a&color=10b981" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0a0f0a&color=10b981" />
+  <img src="https://img.shields.io/badge/Baileys-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=0a0f0a&color=10b981" />
+  <img src="https://img.shields.io/badge/API-FF6F00?style=for-the-badge&logo=fastapi&logoColor=white&labelColor=0a0f0a&color=10b981" />
+  <img src="https://img.shields.io/badge/KV-FF4F00?style=for-the-badge&logo=cloudflare&logoColor=white&labelColor=0a0f0a&color=10b981" />
 </p>
 
 <br />
@@ -63,23 +64,41 @@ const crysnova = {
 <div align="center">
 
 🚀 Project ⭐ Stars 📝 Description
-CRYSNOVA AI https://img.shields.io/github/stars/crysnovax/CRYSNOVA_AI?style=flat&color=10b981 250+ Command WhatsApp Bot with AI
-API Gateway https://img.shields.io/github/stars/crysnovax/API?style=flat&color=10b981 255+ Nexray Endpoints Gateway
-Economy Engine https://img.shields.io/github/stars/crysnovax/economy?style=flat&color=10b981 Virtual Economy with Banking System
+CRYSNOVA AI https://img.shields.io/github/stars/crysnovax/CRYSNOVA_AI?style=flat&color=10b981 250+ Command WhatsApp Bot with AI Integration
+API Gateway https://img.shields.io/github/stars/crysnovax/API?style=flat&color=10b981 255+ Nexray Endpoints Unified API Gateway
+Economy Engine https://img.shields.io/github/stars/crysnovax?style=flat&color=10b981 Realistic Virtual Economy with Banking System
 
 </div>
 
 <br />
 
+<h2 align="center">
+  <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
+  GitHub Stats
+  <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
+</h2>
+
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=crysnovax&show_icons=true&theme=dark&title_color=10b981&icon_color=10b981&text_color=e2f5e8&bg_color=0a0f0a&hide_border=true&count_private=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crysnovax&layout=compact&theme=dark&title_color=10b981&text_color=e2f5e8&bg_color=0a0f0a&hide_border=true" />
+  <a href="https://github.com/crysnovax">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=crysnovax&show_icons=true&theme=dark&title_color=10b981&icon_color=10b981&text_color=e2f5e8&bg_color=0a0f0a&hide_border=true&count_private=true&include_all_commits=true" />
+  </a>
+  <a href="https://github.com/crysnovax">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crysnovax&layout=compact&theme=dark&title_color=10b981&text_color=e2f5e8&bg_color=0a0f0a&hide_border=true&langs_count=8" />
+  </a>
 </div>
 
 <br />
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=crysnovax&theme=dark&ring=10b981&fire=10b981&currStreakLabel=10b981&sideNums=10b981&sideLabels=e2f5e8&dates=6aa886&background=0a0f0a&hide_border=true" />
+  <a href="https://github.com/crysnovax">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=crysnovax&theme=dark&ring=10b981&fire=10b981&currStreakLabel=10b981&sideNums=10b981&sideLabels=e2f5e8&dates=6aa886&background=0a0f0a&hide_border=true" />
+  </a>
+</div>
+
+<br />
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=crysnovax&theme=darkhub&no-frame=true&no-bg=true&margin-w=15&column=7&title_color=10b981" />
 </div>
 
 <br />
@@ -92,24 +111,23 @@ Economy Engine https://img.shields.io/github/stars/crysnovax/economy?style=flat&
 
 <p align="center">
   <a href="https://whatsapp.com/channel/0029Vb6pe77K0IBn48HLKb38">
-    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&color=10b981&labelColor=0a0f0a" />
+    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=0a0f0a&color=10b981" />
   </a>
   <a href="https://youtube.com/@crysnovax">
-    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white&color=10b981&labelColor=0a0f0a" />
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=0a0f0a&color=10b981" />
   </a>
-  <a href="https://discord.com">
-    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white&color=10b981&labelColor=0a0f0a" />
+  <a href="https://discord.com/users/crysnovadesigns">
+    <img src="https://img.shields.io/badge/Discord-crysnovadesigns-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=0a0f0a&color=10b981" />
   </a>
   <a href="https://github.com/crysnovax">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&color=10b981&labelColor=0a0f0a" />
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0a0f0a&color=10b981" />
+  </a>
+  <a href="mailto:crysnovax@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0a0f0a&color=10b981" />
   </a>
 </p>
 
 <br />
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=10b981&height=120&section=footer&text=&fontSize=0" width="100%" />
-</div>
 
 <div align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&quote=Code+is+like+humor.+When+you+have+to+explain+it,+it's+bad.&author=Cory+House" />
@@ -117,7 +135,6 @@ Economy Engine https://img.shields.io/github/stars/crysnovax/economy?style=flat&
 
 <br />
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/crysnovax/crysnovax/main/assets/github-snake.svg" />
-</p>
-```
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=10b981&height=120&section=footer" width="100%" />
+</div>
