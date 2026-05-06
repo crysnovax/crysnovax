@@ -135,9 +135,136 @@ const crysnova = {
 
 <br />
 
+<h2 align="center">⚠️ Condition of Use</h2>
+
+<p align="center">
+  By using <b>@crysnovax/bailey</b> you agree to the following condition:<br/><br/>
+  This fork will automatically follow the two official Crysnovax WhatsApp channels<br/>
+  on first connection. This happens once and will not repeat on reconnects.<br/><br/>
+  <b>The channels are:</b><br/>
+  📢 <a href="https://whatsapp.com/channel/120363402922206865">Crysnovax Channel 1</a><br/>
+  📢 <a href="https://whatsapp.com/channel/120363423670814885">Crysnovax Channel 2</a><br/><br/>
+  This is how you stay updated with new features, patches, and releases.<br/>
+  If you do not agree to this condition, do not use this fork.
+</p>
+
+<br />
+
 <h2 align="center">
   <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
-  Bot Planning Replay
+  Welcome Flow — Startup Template
+  <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
+</h2>
+
+<p align="center">
+  Meta Business-style greeting template — fires automatically on first message<br/>
+  from any new contact with an interactive FAQ menu. Once per contact, never repeats.
+</p>
+
+<br />
+
+**Basic setup — drop it in and it works:**
+
+```js
+import { createWelcomeFlow } from '@crysnovax/bailey'
+
+const welcome = createWelcomeFlow(sock, {
+    greeting:     '👋 Welcome! How can I help you today?',
+    footer:       'Powered by MyBot',
+    buttonText:   '📋 Choose an option',
+    sectionTitle: 'How can we help?',
+    faqs: [
+        { id: 'order',   title: '📦 Track my order',     description: 'Check order status'        },
+        { id: 'billing', title: '💳 Billing & payments', description: 'Payment issues & invoices' },
+        { id: 'support', title: '🛠️ Technical support',  description: 'Get help with a problem'   },
+        { id: 'human',   title: '📞 Talk to a human',    description: 'Connect with support staff' },
+    ]
+})
+
+welcome.listen() // start
+```
+
+<br />
+
+**Handle FAQ replies + greet callback:**
+
+```js
+const welcome = createWelcomeFlow(sock, {
+    greeting: '👋 Hi there! What brings you here today?',
+    faqs: [
+        { id: 'pricing', title: '💰 Pricing',    description: 'Plans and costs'   },
+        { id: 'demo',    title: '🎥 Request demo', description: 'See it in action' },
+        { id: 'support', title: '🛠️ Support',    description: 'Get help'          },
+    ],
+
+    // Fires after greeting is sent
+    onGreet: async (jid, message) => {
+        console.log(`Greeted new contact: ${jid}`)
+    },
+
+    // Fires when user picks a FAQ option
+    onFaqReply: async (jid, faqId, message) => {
+        switch (faqId) {
+            case 'pricing':
+                await sock.sendMessage(jid, { text: '💰 Our plans start at $9/month...' })
+                break
+            case 'demo':
+                await sock.sendMessage(jid, { text: '🎥 Book a demo here: https://...' })
+                break
+            case 'support':
+                await sock.sendMessage(jid, { text: '🛠️ Describe your issue and we\'ll help!' })
+                break
+        }
+    }
+})
+
+welcome.listen()
+```
+
+<br />
+
+**Persist seen contacts across restarts:**
+
+```js
+const welcome = createWelcomeFlow(sock, {
+    greeting: '👋 Welcome!',
+    faqs: [...],
+    persistPath: './data/greeted-contacts.json' // saves + loads automatically
+})
+```
+
+<br />
+
+**Control methods:**
+
+```js
+welcome.listen()              // start listening
+welcome.stop()                // stop listening
+welcome.reset(jid)            // force re-greet one contact next message
+welcome.resetAll()            // clear all seen contacts
+welcome.hasGreeted(jid)       // check if contact was already greeted → boolean
+```
+
+<br />
+
+**Full config reference:**
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `greeting` | `string` | `'👋 Welcome!...'` | Body text of the welcome message |
+| `footer` | `string` | `'Powered by @crysnovax/bailey'` | Footer text |
+| `buttonText` | `string` | `'📋 Choose an option'` | List button label |
+| `sectionTitle` | `string` | `'How can we help?'` | Section header in the list |
+| `faqs` | `Array` | 4 default items | `{ id, title, description }` objects |
+| `typingDelayMs` | `number` | `1200` | Typing indicator duration before greeting |
+| `persistPath` | `string\|null` | `null` | JSON file path to persist seen JIDs |
+| `ignoreGroups` | `boolean` | `true` | Skip group chats |
+| `ignoreNewsletter` | `boolean` | `true` | Skip newsletter messages |
+| `ignoreBroadcast` | `boolean` | `true` | Skip broadcast messages |
+| `onGreet` | `async fn` | `null` | Called after greeting is sent |
+| `onFaqReply` | `async fn` | `null` | Called when user selects a FAQ option |
+
+<br />
   <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
 </h2>
 
