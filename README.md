@@ -137,6 +137,103 @@ const crysnova = {
 
 <h2 align="center">
   <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
+  Bot Planning Replay
+  <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
+</h2>
+
+<p align="center">
+  Live Meta AI-style reasoning feed — each step visibly completes in real time,<br/>
+  then the final rich message lands clean. <b>No "edited" badge. Ever.</b>
+</p>
+
+<br />
+
+**`replayPlanning`** — full live flow: all steps IN_PROGRESS → each flips DONE → delete → final message.
+
+```js
+import { replayPlanning, mixedSteps } from '@crysnovax/bailey'
+
+await replayPlanning(
+    sock, jid,
+
+    // Steps — status is managed automatically, don't pass it
+    mixedSteps([
+        { title: 'Understanding your question…', type: 'reasoning'  },
+        { title: 'Searching for data…',          type: 'search'     },
+        { title: 'Writing the answer…'                              }
+    ]),
+
+    // Final rich message — any richResponse content
+    { code: 'const answer = 42', language: 'javascript' },
+
+    // Options
+    {
+        description:     'Thinking…',   // label on the bubble
+        stepDelayMs:     900,           // ms between each step completing
+        finalPauseMs:    600,           // ms to hold after all steps done
+    }
+)
+```
+
+<br />
+
+**Step type helpers** — each renders a different visual in the Meta bubble.
+
+```js
+import {
+    buildReasoningSteps,   // isReasoning: true  — "thinking" visual
+    buildSearchSteps,      // isEnhancedSearch: true — "searching" visual
+    mixedSteps,            // mix any combination
+    buildSteps             // plain steps (from meta-compositing)
+} from '@crysnovax/bailey'
+
+// All reasoning
+buildReasoningSteps(['Analyzing the problem…', 'Checking edge cases…'])
+
+// All search
+buildSearchSteps(['Searching the web…', 'Reading top results…'])
+
+// Mixed — most realistic Meta AI look
+mixedSteps([
+    { title: 'Reading your message…',  type: 'reasoning' },
+    { title: 'Searching sources…',     type: 'search'    },
+    { title: 'Composing response…'                       }
+])
+```
+
+<br />
+
+**`replayPlanningOnly`** — run the animation without sending a final message. You control what comes next.
+
+```js
+import { replayPlanningOnly, buildSearchSteps } from '@crysnovax/bailey'
+
+await replayPlanningOnly(sock, jid,
+    buildSearchSteps(['Looking up prices…', 'Comparing results…']),
+    { stepDelayMs: 1200 }
+)
+
+// Send whatever you want after — no badge, no trace
+await sock.sendMessage(jid, { text: 'Here are the results!' })
+```
+
+<br />
+
+**Options reference**
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `description` | `string` | `'Thinking…'` | Top label on the indicator bubble |
+| `placeholderText` | `string` | `''` | Body text shown in bubble while steps run |
+| `stepDelayMs` | `number` | `900` | Ms between each step flipping to DONE |
+| `finalPauseMs` | `number` | `600` | Ms to hold after all steps complete before cleanup |
+| `abortOnDisconnect` | `boolean` | `true` | Stops the loop cleanly if socket closes mid-replay |
+| `sendOptions` | `object` | `{}` | Extra options passed to the final `sendMessage` call |
+
+<br />
+
+<h2 align="center">
+  <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
   Meta Compositing & Meta Typing
   <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
 </h2>
@@ -151,7 +248,7 @@ const crysnova = {
 **`metaTyping`** — show the thinking indicator only. You control what happens next.
 
 ```js
-import { metaTyping, buildSteps, PlanningStepStatus } from '@crysnovax/bailey-stable'
+import { metaTyping, buildSteps, PlanningStepStatus } from '@crysnovax/bailey'
 
 const placeholder = await metaTyping(sock, jid, {
     description: 'Thinking…',
@@ -169,7 +266,7 @@ await sock.sendMessage(jid, { delete: placeholder.key })
 Works with every rich content type: `code`, `table`, `text`, `expressions` (LaTeX), `items` (reels carousel), or the full `richResponse` array.
 
 ```js
-import { sendMetaComposited, PlanningStepStatus } from '@crysnovax/bailey-stable'
+import { sendMetaComposited, PlanningStepStatus } from '@crysnovax/bailey'
 
 // With a code block
 await sendMetaComposited(sock, jid,
@@ -228,7 +325,7 @@ await sendMetaComposited(sock, jid,
 **`buildSteps` helper** — turn plain strings into a steps array instantly.
 
 ```js
-import { buildSteps, PlanningStepStatus } from '@crysnovax/bailey-stable'
+import { buildSteps, PlanningStepStatus } from '@crysnovax/bailey'
 
 buildSteps(['Searching…', 'Reading sources…', 'Writing response…'])
 // all IN_PROGRESS by default
