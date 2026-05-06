@@ -135,6 +135,109 @@ const crysnova = {
 
 <br />
 
+<h2 align="center">
+  <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
+  Meta Compositing & Meta Typing
+  <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="28" />
+</h2>
+
+<p align="center">
+  Send rich messages with a Meta AI-style thinking indicator — no <b>"edited"</b> badge, ever.<br/>
+  The placeholder shows, then silently deletes, then the final message lands clean.
+</p>
+
+<br />
+
+**`metaTyping`** — show the thinking indicator only. You control what happens next.
+
+```js
+import { metaTyping, buildSteps, PlanningStepStatus } from '@crysnovax/bailey'
+
+const placeholder = await metaTyping(sock, jid, {
+    description: 'Thinking…',
+    steps: buildSteps(['Reading your message…', 'Writing response…'])
+})
+
+// Delete it yourself whenever ready
+await sock.sendMessage(jid, { delete: placeholder.key })
+```
+
+<br />
+
+**`sendMetaComposited`** — full flow: indicator → auto-delete → clean final message.
+
+Works with every rich content type: `code`, `table`, `text`, `expressions` (LaTeX), `items` (reels carousel), or the full `richResponse` array.
+
+```js
+import { sendMetaComposited, PlanningStepStatus } from '@crysnovax/bailey'
+
+// With a code block
+await sendMetaComposited(sock, jid,
+    { code: 'const x = 1 + 1', language: 'javascript' },
+    {
+        thinkingMs: 3000,
+        description: 'Analyzing…',
+        steps: [
+            { title: 'Reading context…',  status: PlanningStepStatus.DONE },
+            { title: 'Writing code…',     status: PlanningStepStatus.IN_PROGRESS }
+        ]
+    }
+)
+
+// With a table
+await sendMetaComposited(sock, jid,
+    {
+        title: 'Comparison',
+        table: [
+            ['Feature', 'Baileys', 'Crysnovax'],
+            ['Rich Messages', '❌', '✅'],
+            ['Meta Compositing', '❌', '✅'],
+            ['Code Blocks', '❌', '✅']
+        ]
+    },
+    { thinkingMs: 2500, description: 'Building table…' }
+)
+
+// With plain richResponse array (mixed content)
+await sendMetaComposited(sock, jid,
+    {
+        richResponse: [
+            { text: 'Here is your result:' },
+            { code: 'console.log("hello")', language: 'javascript' },
+            { text: 'Run it with `node index.js`' }
+        ]
+    },
+    { thinkingMs: 2000 }
+)
+```
+
+<br />
+
+**Options reference**
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `thinkingMs` | `number` | `2000` | How long the indicator shows before auto-delete |
+| `description` | `string` | `'Thinking…'` | Top-level label on the indicator bubble |
+| `steps` | `Array` | `[]` | Planning steps — use `buildSteps()` for quick setup |
+| `placeholderText` | `string` | `''` | Optional body text shown while loading |
+| `sendOptions` | `object` | `{}` | Extra options passed to the final `sendMessage` call |
+
+<br />
+
+**`buildSteps` helper** — turn plain strings into a steps array instantly.
+
+```js
+import { buildSteps, PlanningStepStatus } from '@crysnovax/bailey'
+
+buildSteps(['Searching…', 'Reading sources…', 'Writing response…'])
+// all IN_PROGRESS by default
+
+buildSteps(['Done step'], PlanningStepStatus.DONE)
+```
+
+<br />
+
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=10b981&height=120&section=footer" width="100%" />
 </div>
