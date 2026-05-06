@@ -151,7 +151,7 @@ const crysnova = {
 **`metaTyping`** — show the thinking indicator only. You control what happens next.
 
 ```js
-import { metaTyping, buildSteps, PlanningStepStatus } from '@crysnovax/bailey'
+import { metaTyping, buildSteps, PlanningStepStatus } from '@crysnovax/bailey-stable'
 
 const placeholder = await metaTyping(sock, jid, {
     description: 'Thinking…',
@@ -169,7 +169,7 @@ await sock.sendMessage(jid, { delete: placeholder.key })
 Works with every rich content type: `code`, `table`, `text`, `expressions` (LaTeX), `items` (reels carousel), or the full `richResponse` array.
 
 ```js
-import { sendMetaComposited, PlanningStepStatus } from '@crysnovax/bailey'
+import { sendMetaComposited, PlanningStepStatus } from '@crysnovax/bailey-stable'
 
 // With a code block
 await sendMetaComposited(sock, jid,
@@ -228,7 +228,7 @@ await sendMetaComposited(sock, jid,
 **`buildSteps` helper** — turn plain strings into a steps array instantly.
 
 ```js
-import { buildSteps, PlanningStepStatus } from '@crysnovax/bailey'
+import { buildSteps, PlanningStepStatus } from '@crysnovax/bailey-stable'
 
 buildSteps(['Searching…', 'Reading sources…', 'Writing response…'])
 // all IN_PROGRESS by default
